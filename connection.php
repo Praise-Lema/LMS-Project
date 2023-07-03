@@ -1,22 +1,29 @@
 <?php
-$conn=mysqli_connect("localhost","root","","lms project");
+$conn=mysqli_connect("localhost","root","","library");
 if(!$conn){
     die("connection failed"
-    .mysql_connect_error());
+    .mysqli_connect_error());
 }
 $booktitle=$_REQUEST['booktitle'];
 $bookauthor=$_REQUEST['bookauthor'];
 $bookisbn=$_REQUEST['bookisbn'];
-
-// kwanzia apo chini ndo panasumbua
-
-
-$sql="INSERT INTO book info(Book Title,Book Author,Book ISBN)VALUES('$booktitle',
-'$bookauthor','$bookisbn')";
+$target_dir="Books/";
+$filename=basename($_FILES["fileToupload"]["name"]);
+$target_file=$target_dir.$filename;
+$uploadok=1;
+$filetype=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$message='$_POST["submit"]&& !empty($_FILES["fileToupload"]["name"])';
+if(isset($message)){
+    if(move_uploaded_file($_FILES["fileToupload"]["tmp_name"],$target_file)){
+        $sql="INSERT INTO bookinfo (booktitle,bookauthor,bookisbn,bookuploaded)VALUES('$booktitle','$bookauthor','$bookisbn','$filename')";
 if(mysqli_query($conn,$sql)){
-echo "data is successfull submited";
+header('location:index.php');
 }else{
     echo"ERROR".$sql."<br>".mysqli_error($conn);
 }
+
+    }
+}
+
 mysqli_close($conn);
 ?>
