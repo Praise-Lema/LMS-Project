@@ -15,9 +15,9 @@ $filetype=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $message='$_POST["submit"]&& !empty($_FILES["fileToupload"]["name"])';
 if(isset($message)){
     if(move_uploaded_file($_FILES["fileToupload"]["tmp_name"],$target_file)){
-        $sql="INSERT INTO bookinfo (booktitle,bookauthor,bookisbn,bookuploaded)VALUES('$booktitle','$bookauthor','$bookisbn','$filename')";
+        $sql="INSERT INTO bookinfo(booktitle,bookauthor,bookisbn,bookuploaded)VALUES('$booktitle','$bookauthor','$bookisbn','$filename')";
 if(mysqli_query($conn,$sql)){
-header('location:index.php');
+header('location:viewbook.php');
 }else{
     echo"ERROR".$sql."<br>".mysqli_error($conn);
 }

@@ -15,32 +15,39 @@
 ?>
     <h1 class="text-center">Add a Book</h1>
     <div class="container">
-        <form action="connection.php" method="post" enctype="multipart/form-data">
+        <form id="myform" action="connection.php" method="post" enctype="multipart/form-data">
             
             <div class="form-group mt-3">
                 <label for="">Book Title:</label>
-                <input type="text" class="form-control" name="booktitle">
+                <input type="text" class="form-control" name="booktitle" id="booktitle">
+                <div class="error"></div>
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3"  >
                 <label for="">Book Author:</label>
-                <input type="text" class="form-control" name="bookauthor">
+                <input type="text" class="form-control" name="bookauthor" id="bookauthor">
+                <div class="error"></div>
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3" >
                 <label for="">Book ISBN:</label>
-                <input type="text" class="form-control" name="bookisbn">
+                <input type="text" class="form-control" name="bookisbn" id="bookisbn">
+                <div class="error"></div>
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3" >
                 <label for="">Book Upload:</label>
-                <input type="file" name="fileToupload" id="fileToupload" class="form-control">
+                <input type="file" name="fileToupload" id="fileToupload" class="form-control" id="bookupload">
+                <div class="error"></div>
             </div>
 
-                <input type="submit" class="btn btn-secondary mt-3">
+                <input type="submit" class="btn btn-secondary mt-3" >
 
             </div>
         </form>
+        
     </div>
+    <script defer src=".\JS\script.js">
+    </script>
 </body>
 </html>
