@@ -13,10 +13,10 @@
             <nav class="navbar navbar-expand-lg p-0">
                 <ul class="navbar nav">
                     <li class="navbar-item">
-                        <a href="#" class="nav-link text-white">Home</a>
+                        <a href="<?php echo '__DIR__'?>/../" class="nav-link text-white">Home</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="nav-link text-white">Inventory</a>
+                        <a href="<?php echo '__DIR__'?>/../viewbook.php" class="nav-link text-white">View Books</a>
                     </li>
                     <li class="navbar-item">
                         <a href="#" class="nav-link text-white">Book Transaction</a>

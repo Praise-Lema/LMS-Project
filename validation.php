@@ -14,4 +14,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $filenameErr= "book to be upload is required";
     } 
 }
+
+function validate(){
+    {
+        $msg = "All Fields Are Required..!!";
+        return $msg;
+    }
+}
 ?>

@@ -1,9 +1,6 @@
 <?php
-$conn=mysqli_connect('localhost','root','','library');
-if(!$conn){
-    die("error:connection failed".mysqli_connect_error());
-}
- include_once __DIR__."\Partials/navigation.php";
+ include_once __DIR__."/connection.php";
+ include_once __DIR__."/Partials/navigation.php";
  
 ?>
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ if(!$conn){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>View Books</title>
 </head>
 <body>
 
@@ -38,17 +35,18 @@ if(!$conn){
                     <td><?php echo $row["bookauthor"];?></td>
                     <td><?php echo $row["bookisbn"];?></td>
                     <td><?php echo $row["bookuploaded"];?></td>
-                    <td><form action="delete.php" method="get">
+                    <td><a href="delete.php?id=<?php echo $row["id"];?>" class="btn btn-danger">Delete</a>
+                        <!-- <form action="delete.php" method="get">
                     <input type="submit" class="btn btn-secondary" style="background-color: green;" value="delete">
-                    </form>
+                    </form> -->
+                    </td>
                 </tr> 
                 <?php
-
             } 
     }else{
         echo "0 result";
     }
-    mysqli_close($conn);
+    // mysqli_close($conn);
       ?>      
     </table>
 </body>
