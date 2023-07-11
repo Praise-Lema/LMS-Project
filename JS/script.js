@@ -2,7 +2,7 @@ const form = document.getElementById('myform');
 const booktitle = document.getElementById('booktitle');
 const bookauthor = document.getElementById('bookauthor');
 const bookisbn = document.getElementById('bookisbn');
-const bookupload = document.getElementById('bookupload');
+const bookupload = document.getElementById('fileToupload');
 
 form.addEventListener('submit',e => {
     e.preventDefault();
@@ -15,8 +15,8 @@ const setError = (element,message) => {
     const errorDisplay = formGroup.querySelector('.error');
 
     errorDisplay.innerText = message;
-    formGroup.Classlist.add('error');
-    formGroup.Classlist.remove('success');
+    formGroup.classList.add('error');
+    formGroup.classList.remove('success');
 }
 
 const setSuccess = element => {
@@ -24,8 +24,8 @@ const setSuccess = element => {
     const errorDisplay = formGroup.querySelector('.error');
 
     errorDisplay.innerText='';
-    formGroup.Classlist.add('success');
-    formGroup.Classlist.remove('error');
+    formGroup.classList.add('success');
+    formGroup.classList.remove('error');
 }
 
 const inputvalidation = () => {
@@ -36,27 +36,27 @@ const inputvalidation = () => {
 
 
     if(booktitlevalue===''){
-        setError(booktitle,'Book title is required');
-    } else {
+        setError(booktitle,'book title is required');
+    } /*else {
         setSuccess(booktitle);
-    }
+    }*/
 
     if(bookauthorvalue===''){
-        setError(bookauthor,'Book author is required');
-    } else {
+        setError(bookauthor,'book author is required');
+    }/* else {
         setSuccess(bookauthor);
-    }
+    }*/
 
     if(bookisbnvalue===''){
-        setError(bookisbn,'Book isbn is required');
-    } else {
+        setError(bookisbn,'book isbn is required');
+    } /*else {
         setSuccess(bookisbn);
-    }
+    }*/
 
     if(bookuploadvalue===''){
-        setError(bookupload,'Book to upload is required');
-    } else {
-        setSuccess(bookupload);
-    }
+        setError(fileToupload,'book to upload is required');
+    } /*else {
+        setSuccess(fileToupload);
+    }*/
 
 }

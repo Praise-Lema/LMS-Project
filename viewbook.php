@@ -38,6 +38,9 @@ if(!$conn){
                     <td><?php echo $row["bookauthor"];?></td>
                     <td><?php echo $row["bookisbn"];?></td>
                     <td><?php echo $row["bookuploaded"];?></td>
+                    <td><form action="delete.php" method="get">
+                    <input type="submit" class="btn btn-secondary" style="background-color: green;" value="delete">
+                    </form>
                 </tr> 
                 <?php
 

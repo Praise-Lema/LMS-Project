@@ -4,9 +4,9 @@ if(!$conn){
     die("connection failed"
     .mysqli_connect_error());
 }
-$booktitle=$_REQUEST['booktitle'];
-$bookauthor=$_REQUEST['bookauthor'];
-$bookisbn=$_REQUEST['bookisbn'];
+$booktitle=$_POST['booktitle'];
+$bookauthor=$_POST['bookauthor'];
+$bookisbn=$_POST['bookisbn'];
 $target_dir="Books/";
 $filename=basename($_FILES["fileToupload"]["name"]);
 $target_file=$target_dir.$filename;
