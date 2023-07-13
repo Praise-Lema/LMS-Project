@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
-    <!-- <link rel="stylesheet" href="CSS/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <?php 
+    include_once __DIR__."/Partials/navigation.php";
+    include_once __DIR__."/validation.php";
+    include_once __DIR__."/connection.php";
+?>
 
 </head>
 <body>
 
-<?php 
-    include_once __DIR__."/Partials/navigation.php";
-    include_once __DIR__."/validation.php";
-?>
+
     <h1 class="text-center">Add a Book</h1>
     <div class="container">
 
@@ -44,6 +45,27 @@
                 <label for="fileToupload">Book Upload:</label>
                 <input type="file" name="fileToupload" id="fileToupload" class="form-control">
             </div>
+
+            <div class="form-group mt-3" >
+                <label for="category">Category Of Book:</label>
+                <select name="dropdown" class="form-control">
+            <?php
+
+            $query = "SELECT categoryofbook FROM category ";
+$result=mysqli_query($conn, $query);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+        ?>
+
+            
+                    <option value="<?php echo $row['categoryofbook'];?>"><?php echo $row['categoryofbook'];?></option>
+     <?php           
+    }
+}
+?>
+</select>
+            </div>
+            
 
                 <input type="submit" class="btn btn-secondary mt-3" >
 
