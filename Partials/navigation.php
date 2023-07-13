@@ -25,6 +25,9 @@
                         <a href="<?php echo '__DIR__'?>/../addcategory.php" class="nav-link text-white">Add Category</a>
                     </li>
                     <li class="navbar-item">
+                        <a href="<?php echo '__DIR__'?>/../viewcategory.php" class="nav-link text-white">Categories</a>
+                    </li>
+                    <li class="navbar-item">
                         <a href="#" class="nav-link text-white">Administrator</a>
                     </li>
                 </ul>
