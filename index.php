@@ -50,25 +50,19 @@
                 <label for="category">Category Of Book:</label>
                 <select name="dropdown" class="form-control">
             <?php
-
             $query = "SELECT categoryofbook FROM category ";
 $result=mysqli_query($conn, $query);
 if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_assoc($result)){
         ?>
-
-            
-                    <option value="<?php echo $row['categoryofbook'];?>"><?php echo $row['categoryofbook'];?></option>
+            <option value="<?php echo $row['categoryofbook'];?>"><?php echo $row['categoryofbook'];?></option>
      <?php           
     }
 }
 ?>
 </select>
             </div>
-            
-
                 <input type="submit" class="btn btn-secondary mt-3" >
-
             </div>
         </form>
         

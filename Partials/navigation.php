@@ -16,10 +16,13 @@
                         <a href="<?php echo '__DIR__'?>/../" class="nav-link text-white">Home</a>
                     </li>
                     <li class="navbar-item">
+                        <a href="<?php echo '__DIR__'?>/../" class="nav-link text-white">Add Book</a>
+                    </li>
+                    <li class="navbar-item">
                         <a href="<?php echo '__DIR__'?>/../viewbook.php" class="nav-link text-white">View Books</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="nav-link text-white">Book Transaction</a>
+                        <a href="<?php echo '__DIR__'?>/../addcategory.php" class="nav-link text-white">Add Category</a>
                     </li>
                     <li class="navbar-item">
                         <a href="#" class="nav-link text-white">Administrator</a>

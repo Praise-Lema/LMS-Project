@@ -36,7 +36,7 @@
                     <td><?php echo $row["bookisbn"];?></td>
                     <td><?php echo $row["bookuploaded"];?></td>
                     <td><a href="delete.php?id=<?php echo $row["id"];?>" class="btn btn-danger">Delete</a>
-                    <a href="edit.php?id=<?php echo $row["id"];?>" class="btn bnt-success" style="background-color: green;">Edit</a>
+                    <a href="edit.php?id=<?php echo $row["id"];?>" class="btn btn-outline-dark">Edit</a>
                         <!-- <form action="delete.php" method="get">
                     <input type="submit" class="btn btn-secondary" style="background-color: green;" value="delete">
                     </form> -->
