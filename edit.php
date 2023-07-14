@@ -17,7 +17,7 @@ $id=$_GET['id'];
     <form action="update.php?id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
 <?php
 
-$query = "SELECT id,booktitle,bookauthor,bookisbn,bookuploaded FROM bookinfo WHERE id = '$id'";
+$query = "SELECT booktitle,bookauthor,bookisbn,bookuploaded FROM bookinfo WHERE id = '$id'";
 $result=mysqli_query($conn, $query);
 if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_assoc($result)){

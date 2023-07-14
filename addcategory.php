@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Book</title>
+    <title>Add Category Of BooK</title>
     <!-- <link rel="stylesheet" href="CSS/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.css"> -->
 
 </head>
@@ -19,7 +19,7 @@
         <form action="category.php" method="post">
         <div class="form-group mt-3">
                 <label for="bookcategory">Category Of Book:</label>
-                <input type="text" class="form-control" name="bookcategory" id="bookcategory">
+                <input type="text" class="form-control" name="bookcategory" id="bookcategory" required>
             </div>
 
             <input type="submit" name="submit" value="Add category" style="background-color:green;" class="btn btn-secondary mt-3">
