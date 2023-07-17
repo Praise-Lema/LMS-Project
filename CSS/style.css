@@ -11,25 +11,11 @@ body{
 nav{
     background: #d86f0d;
 }
-.form-group.Success  input {
-    border-color: #08ca76;
-
-}
-.form-group.error input{
-    border-color: #ff3860;
-}
-.form-group{
-    display: flex;
-    flex-direction: column;
-}
-.form-group input {
-    display:block;
-}
-.form-group input:focus {
-    outline:0;
-}
-.form-group.error{
-    color:#ff3860;
-    font-size:9px;
-    
+#login{
+    position: relative;
+    width: 50%;
+    height: 440px;
+    background-color: antiquewhite;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
 }
