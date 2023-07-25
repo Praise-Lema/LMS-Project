@@ -22,7 +22,8 @@
             <th scope="col">book author</th>
             <th scope="col">book isbn</th>
             <th scope="col">book uploaded</th>
-            <th scope="col">category of book</th>    
+            <th scope="col">category of book</th> 
+            <th scope="col">book cover image</th>  
         </tr>
         </thead>
         <?php 
@@ -37,7 +38,8 @@
                     <td><?php echo $row["bookauthor"];?></td>
                     <td><?php echo $row["bookisbn"];?></td>
                     <td><?php echo $row["bookuploaded"];?></td>
-                  <!--  <td><?php echo $row["categoryofbook"];?></td>-->
+                    <td><?php echo $row["category"];?></td>
+                    <td><img class="img-fluid img-thumbnail" src="<?php echo "Book-cover-images/". $row["bookcover"];?>" width="10%" alt=""/></td>
                     <td><a href="delete.php?id=<?php echo $row["id"];?>" class="btn btn-danger">Delete</a>
                     <a href="edit.php?id=<?php echo $row["id"];?>" class="btn btn-outline-dark">Edit</a>
                         <!-- <form action="delete.php" method="get">
