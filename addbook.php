@@ -9,13 +9,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $category=$_POST['dropdown'];
     $target_dir="Books/";
     $filename=basename($_FILES["fileToupload"]["name"]);
+    $image_dir="Book-cover-images/";
+    $image=basename($_FILES["imageToupload"]["name"]);
+    $image_target_file=$image_dir.$image;
     $target_file=$target_dir.$filename;
     $uploadok=1;
-    $filetype=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $message='$_POST["submit"]&& !empty($_FILES["fileToupload"]["name"])';
-    if(isset($message)){
-        if(move_uploaded_file($_FILES["fileToupload"]["tmp_name"],$target_file)){
-            $sql="INSERT INTO bookinfo(booktitle,bookauthor,bookisbn,bookuploaded,category)VALUES('$booktitle','$bookauthor','$bookisbn','$filename',$category)";
+    $imageFileType=strtolower(pathinfo($image_target_file,PATHINFO_EXTENSION));
+    $message='$_POST["submit"]&& !empty($_FILES["fileToupload"]["name"]) && !empty($_FILES["imageToupload"]["name"])';
+    if($imageFileType!= "jpg" && $imageFileType!= "png" && $imageFileType!= "jpeg" && $imageFileType != "gif"){
+                echo "Sorry only JPG, JPEG, PNG & GIF file are allowed ";
+    }else if(isset($message)){
+        if(move_uploaded_file($_FILES["fileToupload"]["tmp_name"],$target_file) && move_uploaded_file($_FILES["imageToupload"]["tmp_name"],$image_target_file)){
+            $sql="INSERT INTO bookinfo(booktitle,bookauthor,bookisbn,bookuploaded,category,bookcover)VALUES('$booktitle','$bookauthor','$bookisbn','$filename','$category','$image')";
     if(mysqli_query($conn,$sql)){
     header("Location: viewbook.php");
     }else{

@@ -9,6 +9,10 @@
     include_once __DIR__."/Partials/navigation.php";
     include_once __DIR__."/validation.php";
     include_once __DIR__."/connection.php";
+    session_start();
+    if(!$_SESSION['auth']){
+        header('location:login.php');
+    }
 ?>
 
 </head>
@@ -44,6 +48,11 @@
             <div class="form-group mt-3" >
                 <label for="fileToupload">Book Upload:</label>
                 <input type="file" name="fileToupload" id="fileToupload" class="form-control">
+            </div>
+
+            <div class="form-group mt-3" >
+                <label for="fileToupload">cover image:</label>
+                <input type="file" name="imageToupload" id="imageToupload" class="form-control">
             </div>
 
             <div class="form-group mt-3" >

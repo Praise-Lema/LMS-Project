@@ -16,4 +16,5 @@ function validateemail($email, $db){
         return 1;
     }
 }
+
 ?>

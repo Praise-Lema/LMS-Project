@@ -13,7 +13,7 @@
 <body>
     <section class="justify-content-center mt-4" style="margin-left: 30%;">
     <div class="container d-md-flex justify-content-between text-algin-center" style="display: block;">
-        <div class="d-md-flex justify-content-between m-5 p-5 " style="background-color: white; border-radius: 20px;">
+        <div class="d-md-flex justify-content-between m-5 p-5 " style="background-color: transparent; border-radius: 20px;">
         <form action="registration.php" method="POST">
 
         <form action="registration.php" method="post">

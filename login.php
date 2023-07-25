@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
     <?php 
-    include_once __DIR__."/Partials/navigation.php"; 
+    include_once __DIR__."/Partials/navigation.php";
+    
 ?>
 
 </head>
 <body>
     <section class="justify-content-center mt-4" style="margin-left: 30%;">
     <div class="container d-md-flex justify-content-between text-algin-center" style="display: block;">
-        <div class="d-md-flex justify-content-between m-5 p-5 " style="background-color: white; border-radius: 20px;">
-        <form>
+        <div class="d-md-flex justify-content-between m-5 p-5 " style="background-color: transparent; border-radius: 20px;">
+        <form action="authentication.php" method="post">
             <h1> login form</h1>
+            <?php if(isset($_GET["error"])): ?>
+        <div class="alert alert-danger">
+            <?php echo authentication(); ?>
+        </div>
+    <?php endif; ?>
         <div class="form-group mt-3">
                 <label for="emali">Email:</label>
                 <input type="email" class="form-control" name="email">
@@ -29,6 +35,13 @@
                 <a href="#" style="text-decoration:none;">Forgot Password?</a>
             </div >
             <input type="submit" value="login" class="btn btn-secondary mt-3" style="background-color: green;">
+            <div class="mt-3">
+                <p>
+                    Don't have an account?<a href="register.php" style="text-decoration:none;">Register</a>
+
+                </p>
+                
+            </div >
         </form>
     </div>
     </div>
