@@ -17,11 +17,6 @@
         <div class="d-md-flex justify-content-between m-5 p-5 " style="background-color: transparent; border-radius: 20px;">
         <form action="authentication.php" method="post">
             <h1> login form</h1>
-            <?php if(isset($_GET["error"])): ?>
-        <div class="alert alert-danger">
-            <?php echo authentication(); ?>
-        </div>
-    <?php endif; ?>
         <div class="form-group mt-3">
                 <label for="emali">Email:</label>
                 <input type="email" class="form-control" name="email">
@@ -42,6 +37,24 @@
                 </p>
                 
             </div >
+            <?php
+        if(!isset($_GET['result'])){
+            exit();
+        } else{
+        $msg=$_GET['result'];
+        if($msg='empty'){
+            ?>
+             <div class="alert alert-danger mt-3">all field are required..!!</div>
+             <?php
+             exit();
+        }elseif($msg=0){
+            ?>
+            <div class="alert alert-danger mt-3">Wrong password or email..!!</div>
+            <?php
+            exit();
+        }
+        }
+        ?>
         </form>
     </div>
     </div>

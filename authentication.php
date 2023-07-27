@@ -9,15 +9,10 @@ $password=$_POST['password'];
      session_start();
      $_SESSION['auth']='true';
      header('location:index.php');
- } else {
-  function authentication(){
-    {
-        $msg = "Wrong email or password..!!";
-        return $msg;
-    
-    }
-}
-     
- }
+ } elseif(empty($_POST['email']) || empty($_POST['password'])){
+    header('location:login.php?result=empty');
+ } elseif(mysqli_num_rows($result)==0){
+  header('location:login.php?result=0');   
+ } 
 }
  ?>

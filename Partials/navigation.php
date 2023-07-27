@@ -30,7 +30,11 @@
                     <li class="navbar-item">
                         <a href="#" class="nav-link text-white">Administrator</a>
                     </li>
+                    
                 </ul>
+                <div class="navbar-item ms-auto">
+                    <a href="<?php echo '__DIR__'?>/../logout.php" class="btn btn-outline-dark  ">Logout</a>
+                </div>
             </nav>
     </div>
     
