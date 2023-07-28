@@ -9,9 +9,9 @@
     include_once __DIR__."/Partials/navigation.php";
     include_once __DIR__."/validation.php";
     include_once __DIR__."/connection.php";
-    session_start();
-    if(!$_SESSION['auth']){
-        header('location:login.php');
+
+    if(!isset($_SESSION['auth'])){
+        // header('location:login.php');
     }
 ?>
 

@@ -1,11 +1,14 @@
 <?php
 
-
-
 function validate(){
     {
         $msg = "All Fields Are Required..!!";
-        return $msg;
+        $msg2 = "Sorry! Only .jpeg, .gif, .png, .jpg files are allowed!!";
+        if($_GET['error'] == 1){
+            return $msg;
+        }else{
+            return $msg2;
+        }
     }
 }
 function validateemail($email, $db){
