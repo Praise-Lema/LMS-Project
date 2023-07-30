@@ -8,6 +8,7 @@
     <title>Add a Book</title>
     <link rel="stylesheet" href="CSS/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="font/css/all.css">
 </head>
 <body>
     <div>

@@ -11,19 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Books</title>
 </head>
-<body>
+<body class="unique">
 <h1 class="text-center">View Book</h1>
 <div class="container">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">book title</th>
-            <th scope="col">book author</th>
-            <th scope="col">book isbn</th>
-            <th scope="col">book uploaded</th>
-            <th scope="col">category of book</th> 
-            <th scope="col">book cover image</th>  
+            <th scope="col">Id</th>
+            <th scope="col">Book cover</th>
+            <th scope="col">Book title</th>
+            <th scope="col">Book author</th>
+            <th scope="col">Book isbn</th>
+            <th scope="col">Book uploaded</th>
+            <th scope="col">category</th> 
+            
         </tr>
         </thead>
         <?php 
@@ -34,14 +35,17 @@
                 ?>
                 <tr>
                     <td><?php echo $row["id"];?></td>
+                    <td>
+                        <img class="img-fluid image " src="<?php echo "Book-cover-images/". $row["bookcover"];?>" width="100" alt=""/>
+                    </td>
                     <td><?php echo $row["booktitle"];?></td>
                     <td><?php echo $row["bookauthor"];?></td>
                     <td><?php echo $row["bookisbn"];?></td>
                     <td><?php echo $row["bookuploaded"];?></td>
                     <td><?php echo $row["category"];?></td>
-                    <td><img class="img-fluid img-thumbnail" src="<?php echo "Book-cover-images/". $row["bookcover"];?>" width="10%" alt=""/></td>
-                    <td><a href="delete.php?id=<?php echo $row["id"];?>" class="btn btn-danger">Delete</a>
-                    <a href="edit.php?id=<?php echo $row["id"];?>" class="btn btn-outline-dark">Edit</a>
+                    
+                    <td><a href="delete.php?id=<?php echo $row["id"];?>" class="fa fa-trash"></a>
+                    <a href="edit.php?id=<?php echo $row["id"];?>"><i class="fas fa-edit"></i></a>
                         <!-- <form action="delete.php" method="get">
                     <input type="submit" class="btn btn-secondary" style="background-color: green;" value="delete">
                     </form> -->
